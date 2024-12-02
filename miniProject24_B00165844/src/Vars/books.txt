@@ -1,5 +1,5 @@
 Effective Java, Joshua Bloch, 2008, 9780134686097, Loaned
-Clean Code, Robert C. Martin, 2008, 9780136083238, Available
+Clean Code, Robert C. Martin, 2008, 9780136083238, Loaned
 Design Patterns: Elements of Reusable Object-Oriented Software, Erich Gamma, 1994, 9780201633610, Available
 Java: The Complete Reference, Herbert Schildt, 2018, 9781260440218, Available
 Head First Design Patterns, Eric Freeman, 2004, 9780596007126, Available

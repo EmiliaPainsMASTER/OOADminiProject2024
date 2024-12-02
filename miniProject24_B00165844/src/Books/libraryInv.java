@@ -12,27 +12,27 @@ public abstract class libraryInv {//start of superClass libraryInv
     }
 
     //getter setter
-    public String getIsbn() {
+    protected String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
+    protected void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
-    public int getDateReleased() {
+    protected int getDateReleased() {
         return dateReleased;
     }
 
-    public void setDateReleased(int dateReleased) {
+    protected void setDateReleased(int dateReleased) {
         this.dateReleased = dateReleased;
     }
 
-    public String getBookName() {
+    protected String getBookName() {
         return bookName;
     }
 
-    public void setBookName(String bookName) {
+    protected void setBookName(String bookName) {
         this.bookName = bookName;
     }
 }
