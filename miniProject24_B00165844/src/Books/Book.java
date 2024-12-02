@@ -11,11 +11,11 @@ public class Book extends libraryInv {//start of subClass Book which extends lib
     }
 
     //getter/setters
-    public String getAuthor() {
+    protected String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    protected void setAuthor(String author) {
         this.author = author;
     }
 

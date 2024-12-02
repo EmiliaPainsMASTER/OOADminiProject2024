@@ -11,62 +11,70 @@ public class Storage {
     public static Book[] loadBooks() {
         Book[] booksArray = null;
         try {
-            //variable declares
+            // Variable declarations
             FileReader fileReader = new FileReader(filename);
             BufferedReader bookReader = new BufferedReader(fileReader);
             int lines = 0;
-            //counting the lines in file
+
+            // Counting lines in the file
             while (bookReader.readLine() != null) {
                 lines++;
             }
-            //filling the array
+
+            // Filling the array
             booksArray = new Book[lines];
-            // resetting variables
+
+            // Resetting file readers
             fileReader.close();
             fileReader = new FileReader(filename);
             bookReader = new BufferedReader(fileReader);
-            //for loop that goes line by line and splits the line by ,
+
+            // Reading lines and populating books array
             for (int count = 0; count < lines; count++) {
                 String line = bookReader.readLine();
                 String[] parts = line.split(", ");
                 String bookName = parts[0];
                 String author = parts[1];
-                int dateReleased = Integer.parseInt(parts[2]);
+                int dateReleased = Integer.parseInt(parts[2].trim());
                 String isbn = parts[3];
-                bookLoaned loaned = bookLoaned.valueOf(parts[4]);
-                //
-                booksArray[count] = new Book(bookName, author, dateReleased, isbn, loaned);
+                bookLoaned loaned = bookLoaned.valueOf(parts[4].trim());
 
+                booksArray[count] = new Book(bookName, author, dateReleased, isbn, loaned);
             }
-            //closes fire reading
-            fileReader.close();
+
+            // Closing file readers
             bookReader.close();
-            //error catching
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return booksArray;
     }
 
-    public static void saveBooks(Book[] bookArray, int index, boolean isReturningBook) {
-        //overwrites by index using lines to Loaned/Available
-        if (isReturningBook) {
-            bookArray[index].setLoaned(bookLoaned.Available);
-        } else {
-            bookArray[index].setLoaned(bookLoaned.Loaned);
-        }
+    public static void saveBooks(Book[] bookArray, int userIndex, boolean isReturningBook) {
+        // Check if the index is within bounds
+        if (userIndex >= 0 && userIndex < bookArray.length) {
+            if (isReturningBook) {
+                bookArray[userIndex].setLoaned(bookLoaned.Available);
+            } else {
+                bookArray[userIndex].setLoaned(bookLoaned.Loaned);
+            }
 
-        try {
-            FileWriter bookFWriter = new FileWriter(filename);
-            PrintWriter bookPWriter = new PrintWriter(bookFWriter);
-            for (Book book : bookArray) {// start for loop
-                bookPWriter.println(book.toFileString());
-            } // end for loop
-            // closes the file
-            bookPWriter.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                FileWriter bookFWriter = new FileWriter(filename);
+                PrintWriter bookPWriter = new PrintWriter(bookFWriter);
+
+                for (Book book : bookArray) {
+                    bookPWriter.println(book.toFileString());
+                }
+
+                // Closing the writer
+                bookPWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.println("Invalid index. Please select a valid book index.");
         }
     }
 }
-

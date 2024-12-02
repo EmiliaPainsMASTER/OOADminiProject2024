@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76041dac-00c9-4fe3-b558-f01feaabb2a5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/Working/Storage.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/libraryInv.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/libraryInv.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/libraryUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/libraryUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/output.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/output.java" afterDir="false" />
@@ -33,14 +36,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "beta",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;beta&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OOADminiProject2024" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OOADminiProject2024" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,5 +69,16 @@
       <updated>1730731210709</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
