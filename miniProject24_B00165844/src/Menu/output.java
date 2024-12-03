@@ -11,8 +11,12 @@ public class output {
 
     public static void printVar(libraryItem[] items) {
         for (int i = 0; i < items.length; i++) {
-            int count = i + 1;
-            System.out.println("[" + count + "] " + items[i].toDisplayString());  // Ensure toDisplayString() is called here
+            int count = i + 1; // Adjust for 1-based indexing
+            if (count < 10) { // Single-digit index
+                System.out.println("[" + count + "]  " + items[i].toDisplayString());
+            } else { // Double-digit index
+                System.out.println("[" + count + "] " + items[i].toDisplayString());
+            }
         }
         System.out.println();
     }

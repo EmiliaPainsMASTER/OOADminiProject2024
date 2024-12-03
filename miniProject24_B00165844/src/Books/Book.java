@@ -49,4 +49,9 @@ public class Book extends libraryInv implements libraryItem {
                 getIsbn(),              // ISBN (20 characters wide)
                 loaned.toString());     // Loaned status (10 characters wide)
     }
+
+    //similar to above but reverts the output to what was originally in the text file (toString seems to override the PrintWriter with the toString output)
+    public String toFileString() {
+        return getBookName() + ", " + author + ", " + getDateReleased() + ", " + getIsbn() + ", " + loaned;
+    }
 }
