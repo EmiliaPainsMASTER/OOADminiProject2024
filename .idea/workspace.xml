@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76041dac-00c9-4fe3-b558-f01feaabb2a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/libraryInv.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Books/libraryInv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/libraryUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/libraryUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/output.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Menu/output.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Vars/Storage.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Vars/Storage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject24_B00165844/src/Vars/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject24_B00165844/src/Vars/books.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,21 +36,6 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="OOADminiProject2024" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="OOADminiProject2024" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
