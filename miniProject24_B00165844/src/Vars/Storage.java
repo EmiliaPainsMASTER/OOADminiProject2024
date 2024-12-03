@@ -65,7 +65,7 @@ public class Storage {
                 PrintWriter bookPWriter = new PrintWriter(bookFWriter);
 
                 for (Book book : bookArray) {
-                    bookPWriter.println(book.toFileString());
+                    bookPWriter.println(book.toDisplayString());
                 }
 
                 // Closing the writer
