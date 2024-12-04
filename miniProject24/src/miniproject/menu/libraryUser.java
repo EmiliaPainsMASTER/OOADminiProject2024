@@ -1,18 +1,19 @@
-package Menu;
+package miniproject.menu;
 
-import Exceptions.InvalidFileException;
-import Interface.libraryItem;
+import miniproject.exceptions.InvalidFileException;
+import miniproject.interfaces.libraryItem;
+import miniproject.books.Book;
 
 import java.util.Scanner;
 
-import static InputOutput.Storage.saveBooks;
-import static Menu.output.printMenu;
-import static Menu.output.printVar;
-import static Menu.tryCatch.mainMenuChoice;
-import static Menu.tryCatch.subMenuChoice;
+import static miniproject.inputoutput.Storage.saveBooks;
+import static miniproject.menu.output.printMenu;
+import static miniproject.menu.output.printVar;
+import static miniproject.menu.tryCatch.mainMenuChoice;
+import static miniproject.menu.tryCatch.subMenuChoice;
 
 public class libraryUser {
-    public static boolean isReturningItem;
+    public boolean isReturningItem;
     public static int indexChoice;
     public static Scanner userInput = new Scanner(System.in);
 
@@ -48,7 +49,7 @@ public class libraryUser {
             } else {
                 books[indexChoice].loan();
                 // Save changes to storage
-                saveBooks((Books.Book[]) books, indexChoice, false);
+                saveBooks((Book[]) books, indexChoice, false);
                 break;
             }
         }
@@ -66,7 +67,7 @@ public class libraryUser {
             } else {
                 books[indexChoice].returnItem();
                 // Save changes to storage
-                saveBooks((Books.Book[]) books, indexChoice, true);
+                saveBooks((Book[]) books, indexChoice, true);
                 break;
             }
         }

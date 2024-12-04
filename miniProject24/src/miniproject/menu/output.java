@@ -1,6 +1,6 @@
-package Menu;
+package miniproject.menu;
 
-import Interface.libraryItem;
+import miniproject.interfaces.libraryItem;
 
 public class output {
     public static void printMenu() {

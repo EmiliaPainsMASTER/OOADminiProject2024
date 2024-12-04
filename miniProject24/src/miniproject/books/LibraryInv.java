@@ -1,11 +1,11 @@
-package Books;
+package miniproject.books;
 
-public abstract class libraryInv {//start of superClass libraryInv
+public abstract class LibraryInv {//start of superClass libraryInv
     private String isbn;
     private int dateReleased;
     private String bookName;
 
-    public libraryInv(String isbn, int dateReleased, String bookName) {//constructor
+    public LibraryInv(String isbn, int dateReleased, String bookName) {//constructor
         this.isbn = isbn;
         this.dateReleased = dateReleased;
         this.bookName = bookName;

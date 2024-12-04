@@ -1,38 +1,38 @@
-package Books;
+package miniproject.books;
 
-import Interface.libraryItem;
+import miniproject.interfaces.libraryItem;
 
-public class Book extends libraryInv implements libraryItem {
+public class Book extends LibraryInv implements libraryItem {
     private final String author;
-    private bookLoaned loaned;
+    private BookLoaned loaned;
 
-    public Book(String bookName, String author, int dateReleased, String isbn, bookLoaned loaned) {
+    public Book(String bookName, String author, int dateReleased, String isbn, BookLoaned loaned) {
         super(isbn, dateReleased, bookName);
         this.author = author;
         this.loaned = loaned;
     }
 
     public void loan() {
-        if (loaned == bookLoaned.Available) {
-            loaned = bookLoaned.Loaned;
+        if (loaned == BookLoaned.AVAILABLE) {
+            loaned = BookLoaned.LOANED;
         } else {
             System.out.println("Book is already loaned.");
         }
     }
 
     public void returnItem() {
-        if (loaned == bookLoaned.Loaned) {
-            loaned = bookLoaned.Available;
+        if (loaned == BookLoaned.LOANED) {
+            loaned = BookLoaned.AVAILABLE;
         } else {
             System.out.println("Book is already available.");
         }
     }
 
     public boolean isLoaned() {
-        return loaned == bookLoaned.Loaned;
+        return loaned == BookLoaned.LOANED;
     }
 
-    public void setLoaned(bookLoaned loaned) {
+    public void setLoaned(BookLoaned loaned) {
         this.loaned = loaned;
     }
 

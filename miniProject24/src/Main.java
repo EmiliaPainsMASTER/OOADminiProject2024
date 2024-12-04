@@ -1,8 +1,8 @@
-import Books.Book;
-import Exceptions.InvalidFileException;
+import miniproject.books.Book;
+import miniproject.exceptions.InvalidFileException;
 
-import static InputOutput.Storage.loadBooks;
-import static Menu.libraryUser.libraryMenu;
+import static miniproject.inputoutput.Storage.loadBooks;
+import static miniproject.menu.libraryUser.libraryMenu;
 
 public class Main {
     public static void main(String[] args) throws InvalidFileException {
