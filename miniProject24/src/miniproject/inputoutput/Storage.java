@@ -1,13 +1,13 @@
-package InputOutput;
+package miniproject.inputoutput;
 
-import Books.Book;
-import Books.bookLoaned;
-import Exceptions.InvalidFileException;
+import miniproject.books.Book;
+import miniproject.books.BookLoaned;
+import miniproject.exceptions.InvalidFileException;
 
 import java.io.*;
 
 public class Storage {
-    public static String filename = "src/InputOutput/books.txt";
+    public static String filename = "books.txt";
 
     public static Book[] loadBooks() throws InvalidFileException {
         Book[] booksArray;
@@ -38,7 +38,7 @@ public class Storage {
                 String author = parts[1];
                 int dateReleased = Integer.parseInt(parts[2].trim());
                 String isbn = parts[3];
-                bookLoaned loaned = bookLoaned.valueOf(parts[4].trim());
+                BookLoaned loaned = BookLoaned.valueOf(parts[4].trim());
 
                 booksArray[count] = new Book(bookName, author, dateReleased, isbn, loaned);
             }
@@ -54,9 +54,9 @@ public class Storage {
     public static void saveBooks(Book[] bookArray, int userIndex, boolean isReturningBook) throws InvalidFileException {
         // Check if the index is within bounds
         if (isReturningBook) {
-            bookArray[userIndex].setLoaned(bookLoaned.Available);
+            bookArray[userIndex].setLoaned(BookLoaned.AVAILABLE);
         } else {
-            bookArray[userIndex].setLoaned(bookLoaned.Loaned);
+            bookArray[userIndex].setLoaned(BookLoaned.LOANED);
         }
 
         try {

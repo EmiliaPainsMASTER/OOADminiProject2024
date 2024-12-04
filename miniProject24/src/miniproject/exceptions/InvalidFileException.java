@@ -1,4 +1,4 @@
-package Exceptions;
+package miniproject.exceptions;
 
 import java.io.IOException;
 

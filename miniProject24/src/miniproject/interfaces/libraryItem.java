@@ -1,4 +1,4 @@
-package Interface;
+package miniproject.interfaces;
 
 public interface libraryItem {
     void loan();

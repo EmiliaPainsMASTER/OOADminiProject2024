@@ -1,0 +1,14 @@
+# Ignore IntelliJ IDEA settings and files
+.idea/
+
+# Ignore the build output directory at the root
+/out/
+
+# Ensure any specific files inside src/ are not ignored (if needed)
+!miniProject24/src/**
+
+# General rules
+*.iml
+*.pdf
+*.log
+.DS_Store

@@ -1,9 +1,9 @@
-package Menu;
+package miniproject.menu;
 
-import Exceptions.InvalidInputException;
-import Interface.libraryItem;
+import miniproject.exceptions.InvalidInputException;
+import miniproject.interfaces.libraryItem;
 
-import static Menu.libraryUser.userInput;
+import static miniproject.menu.libraryUser.userInput;
 
 public class tryCatch {
     public static int mainMenuChoice() {
@@ -39,6 +39,7 @@ public class tryCatch {
                 userInput.next();
             }
         }
+        //return the indexChoice as a index that can be used in the Array (where 1 becomes 0)
         return indexChoice - 1;
     }
 }
