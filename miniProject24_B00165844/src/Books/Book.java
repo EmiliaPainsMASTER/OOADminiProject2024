@@ -12,7 +12,6 @@ public class Book extends libraryInv implements libraryItem {
         this.loaned = loaned;
     }
 
-    @Override
     public void loan() {
         if (loaned == bookLoaned.Available) {
             loaned = bookLoaned.Loaned;
@@ -21,7 +20,6 @@ public class Book extends libraryInv implements libraryItem {
         }
     }
 
-    @Override
     public void returnItem() {
         if (loaned == bookLoaned.Loaned) {
             loaned = bookLoaned.Available;
@@ -30,7 +28,6 @@ public class Book extends libraryInv implements libraryItem {
         }
     }
 
-    @Override
     public boolean isLoaned() {
         return loaned == bookLoaned.Loaned;
     }
@@ -39,7 +36,6 @@ public class Book extends libraryInv implements libraryItem {
         this.loaned = loaned;
     }
 
-    @Override
     public String toDisplayString() {
         // Ensuring fixed-width formatting for the fields
         return String.format("%-80s %-40s %-10d %-20s %-10s",

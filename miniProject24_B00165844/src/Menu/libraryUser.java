@@ -1,75 +1,73 @@
 package Menu;
 
-import Books.Book;
+import Exceptions.InvalidFileException;
 import Interface.libraryItem;
-import Vars.Storage;
 
 import java.util.Scanner;
+
+import static InputOutput.Storage.saveBooks;
+import static Menu.output.printMenu;
+import static Menu.output.printVar;
+import static Menu.tryCatch.mainMenuChoice;
+import static Menu.tryCatch.subMenuChoice;
 
 public class libraryUser {
     public static boolean isReturningItem;
     public static int indexChoice;
-    protected static boolean loop = true;
-    static Scanner userInput = new Scanner(System.in);
+    public static Scanner userInput = new Scanner(System.in);
 
-    public static void libraryMenu(libraryItem[] items) {
-        while (loop) {
+    public static void libraryMenu(libraryItem[] items) throws InvalidFileException {
+        while (true) {
+            printVar(items); // Display all items
             int inputChoice;
-            output.printMenu();
-            System.out.print("Please enter an index to use the program: ");
-            inputChoice = userInput.nextInt();
-            System.out.println();
-            output.printVar((Book[]) items); // Display all items
+            printMenu();
+            inputChoice = mainMenuChoice();
 
             if (inputChoice == 1) { // Loan an item
                 loanItem(items);
             } else if (inputChoice == 2) { // Return an item
                 returnItem(items);
             } else if (inputChoice == 3) { // Exit
-                System.out.println("Exiting library menu. Goodbye!");
-                loop = false;
+                //TODO problem where upon menu exit the books would be shown again (issue fixed- line 16 was originally below the index inputChoice at line 21/2)
+                //TODO create a transaction from the user detailing books and timestamp
+                System.out.println("Menu exit, your receipt will be available to you after this happens");
+                break;
             }
         }
     }
 
-    private static void loanItem(libraryItem[] items) {
-        boolean isNotLoaned = true;
-        while (isNotLoaned) {
-            System.out.print("Which item would you like to loan out? Alternatively, you can enter 0 to leave the submenu. (Use index 1 to " + items.length + "): ");
-            indexChoice = userInput.nextInt() - 1;
+    private static void loanItem(libraryItem[] books) throws InvalidFileException {
+        while (true) {
+            indexChoice = subMenuChoice(books);
 
-            if (indexChoice < 0 || indexChoice >= items.length) {
+            if (indexChoice < 0 || indexChoice >= books.length) {
                 System.out.println("Exiting loaning process.");
-                isNotLoaned = false;
-            } else if (items[indexChoice].isLoaned()) {
+                break;
+            } else if (books[indexChoice].isLoaned()) {
                 System.out.println("This item has already been loaned.");
             } else {
-                items[indexChoice].loan();
-                isNotLoaned = false;
-
+                books[indexChoice].loan();
                 // Save changes to storage
-                Storage.saveBooks((Books.Book[]) items, indexChoice, false);
+                saveBooks((Books.Book[]) books, indexChoice, false);
+                break;
             }
         }
     }
 
-    private static void returnItem(libraryItem[] items) {
-        boolean isReturning = true;
-        while (isReturning) {
-            System.out.print("Which item would you like to return? Alternatively, you can enter 0 to leave the submenu. (Use index 1 to " + items.length + "): ");
-            indexChoice = userInput.nextInt() - 1;
+    private static void returnItem(libraryItem[] books) throws InvalidFileException {
+        while (true) {
+            indexChoice = subMenuChoice(books);
 
-            if (indexChoice < 0 || indexChoice >= items.length) {
+            if (indexChoice < 0 || indexChoice >= books.length) {
                 System.out.println("Exiting return process.");
-                isReturning = false;
-            } else if (!items[indexChoice].isLoaned()) {
+                break;
+            } else if (!books[indexChoice].isLoaned()) {
                 System.out.println("This item has not been loaned out.");
             } else {
-                items[indexChoice].returnItem();
-                isReturning = false;
-
+                books[indexChoice].returnItem();
                 // Save changes to storage
-                Storage.saveBooks((Books.Book[]) items, indexChoice, true);
+                saveBooks((Books.Book[]) books, indexChoice, true);
+                break;
             }
         }
     }

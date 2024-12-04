@@ -1,10 +1,12 @@
 import Books.Book;
-import Menu.libraryUser;
-import Vars.Storage;
+import Exceptions.InvalidFileException;
+
+import static InputOutput.Storage.loadBooks;
+import static Menu.libraryUser.libraryMenu;
 
 public class Main {
-    public static void main(String[] args) {
-        Book[] books = Storage.loadBooks();
-        libraryUser.libraryMenu(books);
+    public static void main(String[] args) throws InvalidFileException {
+        Book[] books = loadBooks();
+        libraryMenu(books);
     }
 }
