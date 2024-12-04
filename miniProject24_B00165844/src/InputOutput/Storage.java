@@ -1,18 +1,19 @@
-package Vars;
+package InputOutput;
 
 import Books.Book;
 import Books.bookLoaned;
+import Exceptions.InvalidFileException;
 
 import java.io.*;
 
 public class Storage {
-    static String filename = "src/Vars/books.txt";
+    public static String filename = "src/InputOutput/books.txt";
 
-    public static Book[] loadBooks() {
-        Book[] booksArray = null;
+    public static Book[] loadBooks() throws InvalidFileException {
+        Book[] booksArray;
         try {
             // Variable declarations
-            FileReader fileReader = new FileReader(filename);
+            FileReader fileReader = new FileReader(filename); // Open file
             BufferedReader bookReader = new BufferedReader(fileReader);
             int lines = 0;
 
@@ -21,12 +22,12 @@ public class Storage {
                 lines++;
             }
 
-            // Filling the array
+            // Initialize the array with the correct size
             booksArray = new Book[lines];
 
             // Resetting file readers
-            fileReader.close();
-            fileReader = new FileReader(filename);
+            bookReader.close();
+            fileReader = new FileReader(filename); // Reopen file for reading
             bookReader = new BufferedReader(fileReader);
 
             // Reading lines and populating books array
@@ -45,36 +46,31 @@ public class Storage {
             // Closing file readers
             bookReader.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new InvalidFileException("Error reading the book file: " + filename, e);
         }
-
         return booksArray;
     }
 
-    public static void saveBooks(Book[] bookArray, int userIndex, boolean isReturningBook) {
+    public static void saveBooks(Book[] bookArray, int userIndex, boolean isReturningBook) throws InvalidFileException {
         // Check if the index is within bounds
-        if (userIndex >= 0 && userIndex < bookArray.length) {
-            if (isReturningBook) {
-                bookArray[userIndex].setLoaned(bookLoaned.Available);
-            } else {
-                bookArray[userIndex].setLoaned(bookLoaned.Loaned);
-            }
-
-            try {
-                FileWriter bookFWriter = new FileWriter(filename);
-                PrintWriter bookPWriter = new PrintWriter(bookFWriter);
-
-                for (Book book : bookArray) {
-                    bookPWriter.println(book.toFileString());
-                }
-
-                // Closing the writer
-                bookPWriter.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        if (isReturningBook) {
+            bookArray[userIndex].setLoaned(bookLoaned.Available);
         } else {
-            System.out.println("Invalid index. Please select a valid book index.");
+            bookArray[userIndex].setLoaned(bookLoaned.Loaned);
+        }
+
+        try {
+            FileWriter bookFWriter = new FileWriter(filename);
+            PrintWriter bookPWriter = new PrintWriter(bookFWriter);
+
+            for (Book book : bookArray) {
+                bookPWriter.println(book.toFileString());
+            }
+
+            // Closing the writer
+            bookPWriter.close();
+        } catch (IOException e) {
+            throw new InvalidFileException("Error reading the book file: " + filename, e);
         }
     }
 }
