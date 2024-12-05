@@ -2,11 +2,11 @@ package miniproject.menu;
 
 import miniproject.interfaces.libraryItem;
 
-public class output {
+public class Output {
     public static void printMenu() {
-        System.out.printf("[1]\t%s%n", "Loan Items");
-        System.out.printf("[2]\t%s%n", "Return Items");
-        System.out.printf("[3]\t%s%n", "Exit");
+        System.out.println("Enter 'Loan' if you want to loan Items");
+        System.out.println("Enter 'Return' if you want to return Items");
+        System.out.println("Enter 'Exit' if you want to leave the program");
     }
 
     public static void printVar(libraryItem[] items) {

@@ -6,32 +6,28 @@ public abstract class LibraryInv {//start of superClass libraryInv
     private String bookName;
 
     public LibraryInv(String isbn, int dateReleased, String bookName) {//constructor
-        this.isbn = isbn;
-        this.dateReleased = dateReleased;
-        this.bookName = bookName;
+        setIsbn(isbn);
+        setDateReleased(dateReleased);
+        setBookName(bookName);
     }
 
     //getter setter
     protected String getIsbn() {
         return isbn;
     }
-
-    protected void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public String getBookName() {
+        return bookName;
     }
-
     protected int getDateReleased() {
         return dateReleased;
     }
 
+    protected void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
     protected void setDateReleased(int dateReleased) {
         this.dateReleased = dateReleased;
     }
-
-    protected String getBookName() {
-        return bookName;
-    }
-
     protected void setBookName(String bookName) {
         this.bookName = bookName;
     }

@@ -3,18 +3,19 @@ package miniproject.menu;
 import miniproject.exceptions.InvalidInputException;
 import miniproject.interfaces.libraryItem;
 
-import static miniproject.menu.libraryUser.userInput;
+import static miniproject.menu.LibraryUser.userInput;
 
-public class tryCatch {
-    public static int mainMenuChoice() {
-        int inputChoice;
+public class TryCatch {
+    public static String mainMenuChoice() {
+        String inputChoice;
         while (true) {
             try {
-                System.out.print("Please enter an index to use the program: ");
-                if (!userInput.hasNextInt()) {
-                    throw new InvalidInputException("Invalid input! Please enter an integer! (1-3)");
+                System.out.print("Please enter any of these words (LOAN)(RETURN)(EXIT) to use the program: ");
+                if (!userInput.hasNextLine()) {
+                    System.out.println();
+                    throw new InvalidInputException("Invalid input! Please enter an String! (Loan/Return/Exit)");
                 }
-                inputChoice = userInput.nextInt();
+                inputChoice = userInput.nextLine();
                 break;
             } catch (InvalidInputException e) {
                 System.out.println(e.getMessage());
@@ -22,6 +23,24 @@ public class tryCatch {
             }
         }
         return inputChoice;
+    }
+    public static String usernameChoice(){
+        String username;
+        while (true) {
+            try {
+                System.out.print("Please enter your name to use this program: ");
+                if (!userInput.hasNextLine()) {
+                    System.out.println();
+                    throw new InvalidInputException("Invalid input! Please enter an String! (Steve Gates)");
+                }
+                username = userInput.nextLine();
+                break;
+            } catch (InvalidInputException e) {
+                System.out.println(e.getMessage());
+                userInput.next();
+            }
+        }
+        return username;
     }
 
     public static int subMenuChoice(libraryItem[] items) {
@@ -42,4 +61,5 @@ public class tryCatch {
         //return the indexChoice as a index that can be used in the Array (where 1 becomes 0)
         return indexChoice - 1;
     }
+
 }
