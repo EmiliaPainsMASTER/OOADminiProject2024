@@ -9,6 +9,6 @@
 
 # General rules
 *.iml
-*.pdf
+!*.pdf
 *.log
 .DS_Store
