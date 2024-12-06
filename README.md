@@ -6,7 +6,7 @@
 
 ### Project Brief
 
-[Mini Project Brief.docx](miniProject2024.docx)
+[Mini Project Brief.docx](miniProject2024.pdf)
 
 [Mini Project Brief Original.pdf](Project2024.pdf)
 ### Project Summary
