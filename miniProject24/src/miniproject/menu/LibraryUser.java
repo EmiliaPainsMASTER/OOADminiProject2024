@@ -1,7 +1,7 @@
 package miniproject.menu;
 
 import miniproject.exceptions.InvalidFileException;
-import miniproject.interfaces.libraryItem;
+import miniproject.interfaces.LibraryItem;
 import miniproject.books.Book;
 
 import java.util.Scanner;
@@ -16,21 +16,22 @@ public class LibraryUser {
     public static int indexChoice;
     public static Scanner userInput = new Scanner(System.in);
 
-    public static void libraryMenu(libraryItem[] items) throws InvalidFileException {
+    public static void libraryMenu(LibraryItem[] items) throws InvalidFileException {
         while (true) {
             printVar(items); // Display all items
             String username;
             String inputChoice;
             printMenu();
             inputChoice = mainMenuChoice();
-            if (inputChoice.equalsIgnoreCase("Loan")){ // Loan an item
+            if (inputChoice.equals("Loan") || inputChoice.equals("loan") || inputChoice.equals("LOAN")){
+                // Loan an item
                 loanItem(items);
-            } else if (inputChoice.equalsIgnoreCase("Return"))
-            { // Return an item
+            } else if (inputChoice.equals("Return") || inputChoice.equals("return")|| inputChoice.equals("RETURN")) {
+                // Return an item
                 returnItem(items);
-            } else if (inputChoice.equalsIgnoreCase("Exit")) { // Exit
+            } else if (inputChoice.equals("Exit")|| inputChoice.equals("exit")|| inputChoice.equals("EXIT")) { // Exit
                 //TODO problem where upon menu exit the books would be shown again (issue fixed- line 16 was originally below the index inputChoice at line 21/2)
-                //TODO create a transaction from the user detailing books and timestamp
+                //TODO create a transaction from the user detailing book and timestamp
                 System.out.println("Menu exit, your receipt will be available to you after this happens");
                 transaction(indexChoice, items);
                 break;
@@ -38,7 +39,7 @@ public class LibraryUser {
         }
     }
 
-    private static void loanItem(libraryItem[] books) throws InvalidFileException {
+    private static void loanItem(LibraryItem[] books) throws InvalidFileException {
         while (true) {
             indexChoice = subMenuChoice(books);
 
@@ -56,7 +57,7 @@ public class LibraryUser {
         }
     }
 
-    private static void returnItem(libraryItem[] books) throws InvalidFileException {
+    private static void returnItem(LibraryItem[] books) throws InvalidFileException {
         while (true) {
             indexChoice = subMenuChoice(books);
 

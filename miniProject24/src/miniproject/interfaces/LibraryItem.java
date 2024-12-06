@@ -1,6 +1,6 @@
 package miniproject.interfaces;
 
-public interface libraryItem {
+public interface LibraryItem {
     void loan();
 
     void returnItem();

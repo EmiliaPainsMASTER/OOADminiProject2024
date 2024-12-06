@@ -15,7 +15,7 @@ public abstract class LibraryInv {//start of superClass libraryInv
     protected String getIsbn() {
         return isbn;
     }
-    public String getBookName() {
+    protected String getBookName() {
         return bookName;
     }
     protected int getDateReleased() {

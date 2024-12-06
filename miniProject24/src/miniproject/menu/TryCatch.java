@@ -1,7 +1,7 @@
 package miniproject.menu;
 
 import miniproject.exceptions.InvalidInputException;
-import miniproject.interfaces.libraryItem;
+import miniproject.interfaces.LibraryItem;
 
 import static miniproject.menu.LibraryUser.userInput;
 
@@ -43,7 +43,7 @@ public class TryCatch {
         return username;
     }
 
-    public static int subMenuChoice(libraryItem[] items) {
+    public static int subMenuChoice(LibraryItem[] items) {
         int indexChoice;
         while (true) {
             try {

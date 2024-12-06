@@ -9,6 +9,7 @@ import java.io.*;
 public class Storage {
     public static String filename = "books.txt";
 
+    // loading from file and splitting the line into parts, bookName, author, dateReleased etc.
     public static Book[] loadBooks() throws InvalidFileException {
         Book[] booksArray;
         int lines = countLines();
@@ -30,6 +31,7 @@ public class Storage {
         }
         return booksArray;
     }
+    // save bookArray to file
     public static void saveBooks(Book[] bookArray, int userIndex, boolean isReturningBook) throws InvalidFileException {
         // Check if the index is within bounds
         if (isReturningBook) {
@@ -40,16 +42,15 @@ public class Storage {
 
         try(FileWriter bookFWriter = new FileWriter(filename); PrintWriter bookPWriter = new PrintWriter(bookFWriter)) {
 
+            // saves each object of the bookArray to a line by line document in it's original format
             for (int count = 0 ; count < bookArray.length; count++) {
                 bookPWriter.println(bookArray[count].toFileString());
             }
-
-            // Closing the writer
-            bookPWriter.close();
         } catch (IOException e) {
             throw new InvalidFileException("Error reading the book file: " + filename, e);
         }
     }
+    // method to count the amount of lines, as we possibly couldn't know how many books there are
     public static int countLines() throws InvalidFileException {
         int lines = 0;
         try(FileReader fileReader = new FileReader(filename); BufferedReader bookReader = new BufferedReader(fileReader)) {

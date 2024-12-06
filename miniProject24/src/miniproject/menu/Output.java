@@ -1,6 +1,6 @@
 package miniproject.menu;
 
-import miniproject.interfaces.libraryItem;
+import miniproject.interfaces.LibraryItem;
 
 public class Output {
     public static void printMenu() {
@@ -9,7 +9,7 @@ public class Output {
         System.out.println("Enter 'Exit' if you want to leave the program");
     }
 
-    public static void printVar(libraryItem[] items) {
+    public static void printVar(LibraryItem[] items) {
         for (int i = 0; i < items.length; i++) {
             int count = i + 1; // Adjust for 1-based indexing
             if (count < 10) { // Single-digit index
