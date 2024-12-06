@@ -40,7 +40,7 @@ public class Book extends LibraryInv implements LibraryItem {
     }
 
     public String toTransactionString(){
-        return String.format("%s by %s (ISBN: %s, Released: %s",
+        return String.format("%s by %s (ISBN: %s, Released: %s)",
                 getBookName(),
                 author,
                 getDateReleased(),
