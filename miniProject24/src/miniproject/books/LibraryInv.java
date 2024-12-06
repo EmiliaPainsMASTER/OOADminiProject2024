@@ -1,9 +1,9 @@
 package miniproject.books;
 
 public abstract class LibraryInv {//start of superClass libraryInv
-    private String isbn;
-    private int dateReleased;
-    private String bookName;
+    public String isbn;
+    public int dateReleased;
+    public String bookName;
 
     public LibraryInv(String isbn, int dateReleased, String bookName) {//constructor
         setIsbn(isbn);
@@ -12,13 +12,13 @@ public abstract class LibraryInv {//start of superClass libraryInv
     }
 
     //getter setter
-    protected String getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
     protected String getBookName() {
         return bookName;
     }
-    protected int getDateReleased() {
+    public int getDateReleased() {
         return dateReleased;
     }
 

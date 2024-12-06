@@ -22,25 +22,8 @@ public class TryCatch {
                 userInput.next();
             }
         }
+        System.out.println();
         return inputChoice;
-    }
-    public static String usernameChoice(){
-        String username;
-        while (true) {
-            try {
-                System.out.print("Please enter your name to use this program: ");
-                if (!userInput.hasNextLine()) {
-                    System.out.println();
-                    throw new InvalidInputException("Invalid input! Please enter an String! (Steve Gates)");
-                }
-                username = userInput.nextLine();
-                break;
-            } catch (InvalidInputException e) {
-                System.out.println(e.getMessage());
-                userInput.next();
-            }
-        }
-        return username;
     }
 
     public static int subMenuChoice(LibraryItem[] items) {

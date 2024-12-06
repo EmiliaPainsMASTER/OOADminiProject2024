@@ -39,6 +39,13 @@ public class Book extends LibraryInv implements LibraryItem {
         this.loaned = loaned;
     }
 
+    public String toTransactionString(){
+        return String.format("%s by %s (ISBN: %s, Released: %s",
+                getBookName(),
+                author,
+                getDateReleased(),
+                getIsbn());
+        }
     public String toDisplayString() {
         // Ensuring fixed-width formatting for the fields
         return String.format("%-80s %-40s %-10d %-20s %-10s",
